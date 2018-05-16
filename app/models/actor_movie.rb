@@ -1,4 +1,4 @@
 class ActorMovie < ApplicationRecord
-	belongs_to:Actors
-	belongs_to:movies
+	belongs_to:actor
+	belongs_to:movie
 end
