@@ -1,20 +1,23 @@
 <h1>New Persons</h1>
 
-<%= form_tag("/persons/create", method: "post") do %>
+<%= form_tag("/persons/create", method: "POST") do %>
 
  <div class="field">
-    <%= text_field_tag "fist_name"%>  First Name 
+    <%= text_field_tag :fist_name  %> First Name
   </div>
 
   <div class="field">
-    <%= text_field_tag "last_name" %> Last Name
+    <%= text_field_tag :last_name  %> Last Name
   </div>
 
   <div class="field">
-    <%= text_field_tag "description" %> Description
+    <%= text_field_tag :description  %> Description
   </div>
-  
-   <%= radio_button_tag(:type, "director") %> Director
-   <%= radio_button_tag(:type, "actor") %> Actor
+
+ <%= date_field_tag :birth_date  %> 
+
+   <%= radio_button_tag(:type, 'director') %> Director
+   <%= radio_button_tag(:type, 'actor') %> Actor
    <%= submit_tag("Create") %>
+
 <% end %>
