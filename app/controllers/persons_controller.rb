@@ -2,6 +2,14 @@ class PersonsController < ApplicationController
 	def new
     	   @actor = Actor.new
 	   @director = Director.new
+	   if params[:type] == 'actor'
+		redirect_to  actors_path
+	   if params[:type] == 'director'
+		redirect_to  directors_path
+	   else
+		redirect_to  persons_new_path
+	   end
+	end
   	end
 	
 

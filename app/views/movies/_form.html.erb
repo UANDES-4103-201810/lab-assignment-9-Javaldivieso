@@ -27,11 +27,6 @@
   </div>
 
   <div class="field">
-    <%= form.label :director_id %>
-    <%= form.number_field :director_id, id: :movie_director_id %>
-  </div>
-
-  <div class="field">
     <%= form.label :release_date %>
     <%= form.datetime_select :release_date, id: :movie_release_date %>
   </div>
@@ -42,7 +37,7 @@
   </div>
    <div class="field">
 	<%= form.label :director_id %>
-      <%= select_tag "directors", options_from_collection_for_select(Director.all, "first_name", "last_name") %>
+        <%= form.collection_select :director_id, Director.order(:fist_name),:id,:fist_name, include_blank: true %>
   </div>
 
 
